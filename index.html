@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>COFFEE STAND pole pole</title>
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="slick/slick.css" media="all">
+        <link rel="stylesheet" href="slick/slick-theme.css" />
+        
+        <!-- favicon -->
+        <link rel="shortcut icon" type="image/png" href="images/coffee.png"/>
+
+        <!-- jQueryを読み込む  -->
+        <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="test_js.js"></script>
+        
+        <!-- スライダーのプラグイン -->
+        <script src="slick/slick.min.js"></script>
+
+        <!-- scrollreveal -->
+        <script src="https://unpkg.com/scrollreveal"></script>
+
+        <!-- スムーススクロールのプラグイン -->
+        <script src="smooth-scroll.min.js"></script>
+
+        <script>
+            $(function() {
+            $('.drawer_menu li a').on('click', function(event) {
+                $('.drawer_checkbox').prop('checked', false);
+            });
+            });
+        </script>
+
+        <script type="text/javascript">
+            var scroll = new SmoothScroll('a[href*="#"]', {
+                header: '#header-nav',
+                speed: 900
+            });
+
+            $(function() {
+                var topBtn = $('.to_top');
+                topBtn.hide();
+                $(window).scroll(function () {
+                        if ($(this).scrollTop() > 800) {
+                            topBtn.fadeIn();
+                        } else {
+                            topBtn.fadeOut();
+                        }
+                });
+            });	
+        </script>
+
+
+        <!-- バーガーメニューリンク内ページリンク閉じる -->
+        <script type="text/javascript">
+            $(function(){
+                $('#menu a[href]').on('click', function(event) {
+                    $('.drawer_checkbox').prop('checked', false);
+                });
+            });
+        </script>
+
+        <!-- オープニングアニメーション -->
+        <script>
+            $(function() {
+        setTimeout(function(){
+            $('.start p').fadeIn(800);
+        },500); //0.5秒後にロゴをフェードイン!
+        setTimeout(function(){
+            $('.start').fadeOut(800);
+        },2700); //2.5秒後にロゴ含め真っ白背景をフェードアウト！
+    });
+        </script>
+
+        <!-- fukidashi fade -->
+        <script>
+            $(function(){
+                　$(window).scroll(function (){
+                    $('.effect-fade').each(function(){
+                        var elemPos = $(this).offset().top;
+                        var scroll = $(window).scrollTop();
+                        var windowHeight = $(window).height();
+                        if (scroll > elemPos - windowHeight){
+                            $(this).addClass('effect-scroll');
+                        }
+                    });
+                　});
+                });
+        </script>
+    </head>
+    <body>
+        <section>
+            <header>
+                <!-- ドロワーメニュー -->
+                <div class="drawer">
+                    <input class="drawer_checkbox" id="drawerCheckbox" type="checkbox">
+                    
+                    <!-- ドロワーアイコン部分 -->
+                    <label class="drawer_icon" for="drawerCheckbox">
+                        <span class="drawer_icon_item navToggle"></span>
+                    </label>
+                    
+                    <!-- 背景を暗く -->
+                    <label class="drawer_overlay" for="drawerCheckbox"></label>
+
+                    <nav class="drawer_menu" id="nav-input" role="navigation">
+                        <h2 class="screen_reader_text">MENU</h2>
+                        <ul id="menu">
+                            <li><a href="#top" id="drawer_message">TOP</a></li>
+                            <li><a href="#message" id="drawer_message">当店について</a></li>
+                            <li><a href="#coffee_menu" id="drawer_message">メニュー</a></li>
+                            <li><a href="#info" id="drawer_message">店舗情報</a></li>
+                        </ul>
+                        <figure><img src="images/coffee.png" alt="polepoleのコーヒーロゴ"></figure>
+                    </nav>
+                </div>   
+
+                <div class="container">
+                    <h1>COFFEE STAND<br> pole pole</h1>
+                    <div class="roof roof1"></div>
+                    <div class="roof roof2"></div>
+                    <nav class="nav_pc" id="headernav">
+                        <ul>
+                            <li><a href="#message">当店について</a></li>
+                            <li><a href="#coffee_menu">メニュー</a></li>
+                            <li><a href="#info">店舗情報</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+        </section>
+
+        <main>
+            <section class="opening">
+                <div class="container">
+                    <div class="start">
+                        <p>
+                        「お疲れさま。」<br>
+                        「お気をつけて。」<br>
+                        「いってらっしゃい。」<br>
+                        そっとみんなを応援したくて。
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="top">
+                <div class="container">
+                    <div class="hero">
+                        <div class="fukidashi sp anime_fukidashi effect-fade">
+                            <p>テイクアウト専門店</p>
+                        </div>
+                        
+                        <div class="fukidashi fukidashi_pc pc anime_fukidashi effect-fade">
+                            <p>テイクアウト専門店</p>
+                        </div>
+
+                        <div class="hero_msg">
+                            <figure><img class="img_leaf" src="images/illust_coffee.png" alt="飾り用コーヒーの実のイラスト"></figure>
+                            <p>原駅の<br>小さなコーヒースタンド</p>
+                            <h1 class="sp">COFFEE STAND pole pole<br><span class="small">（コーヒースタンドポレポレ）</span></h1>
+                            <figure><img class="img_coffee_icon_pc pc" src="images/coffee_and_p.png" alt="ハンドドリップで淹れるスペシャルティコーヒー"></figure>
+                            <figure><img class="img_shop_sp sp" src="images/shop.jpg" alt="お店の写真"></figure>
+                            <figure><img class="pc img_shop_deco" src="images/shop_deco.png" alt="お店の写真"></figure>
+                        </div>
+                            
+                        <div class="hero_address">
+                            <address class="top_address">
+                                <h1 class="pc under">COFFEE STAND pole pole<span class="small">（コーヒースタンドポレポレ）</span></h1><br>
+                                <p>名古屋市天白区原1丁目502 ライオンズマンション原駅1F<br>地下鉄鶴舞線　原駅１番出口裏 駐輪場からすぐ</p><br>
+                                <p><span class="em">営業時間</span>　火〜金 <span class="under"><time>8:30-19:00</time></span>　土 <span class="under"><time>8:30-17:00</time></span></p><br>
+                                <p><span class="em">定休日</span>　　日・月・祝日</p>
+                            </address>
+
+                        <div class="hero_time sp">
+                            <div class="hours hours_open">
+                                <p><span class="em">営業時間</span><br>火〜金 <span class="under"><time>8:30-19:00</time></span><br>土 <span class="under"><time>8:30-17:00</time></span></p>
+                            </div>
+                            <div class="hours hours_closed">
+                                <p><span class="em">定休日</span><br><span class="under">日.月.祝日</span></p>
+                            </div>
+                            <figure><img class="sp foot_sp anime" src="images/foot4.png" alt="飾り用足跡のイラスト"></figure>
+
+                        </div>
+                        <figure><img class="pc foot_pc anime" src="images/foot2.png" alt="飾り用足跡のイラスト"></figure>
+                    </div>
+                </div>
+            </section>
+
+            <section id="message" class="anime">
+                <div class="container">
+                    <div class="message_box">
+                        <figure><img class="img_coffee_icon sp" src="images/coffee_and_p.png" alt="ハンドドリップで淹れるスペシャルティコーヒー"></figure>
+                        <h2><img class="img_title" src="images/message.png" alt="MESSAGE"><br>当店について</h2>
+                        <div class="message_textbox">
+                            <p><span class="bold"><span class="under anime">"pole pole”</span>とは、<br>タンザニア語で<span class="under anime">”ゆっくりゆっくり”</span>の意味。</span><br><br>
+                            ちょっと一休みや、お散歩のお供に。<br>
+                            店頭で淹れるコーヒーを五感でお楽しみください。<br>
+                            焼菓子、コーヒー豆もご用意してお待ちしております。<br><br>
+                            <span class="under anime bold">忙しい時ほど、ほっとするひとときを。</span></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="parallax-bg">
+            </div>
+
+            <section id="coffee_menu" class="anime">
+                <figure><img class="illust_coffee" src="images/illust_coffee.png" alt="飾り用コーヒーの実のイラスト"></figure>
+                <div class="container">
+                    <h2><img class="img_title" src="images/our_coffee.png" alt="OUR COFFEE"><br>おすすめメニュー</h2>
+                    <figure><img class="img_coffee_menu" src="images/img_menu.png" alt="手に持ったコーヒーの写真"></figure>
+                    <script>
+                        $(function() {
+                        $('.slider').slick({
+                            autoplay:true,
+                            autoplaySpeed:3000,
+                            arrows:true,
+                            dots: true,
+                            draggable:false,
+
+                            responsive: [
+                                {
+                                    breakpoint:959,
+                                    settings: {
+                                        arrows:false,
+                                        draggable:true,
+                                    }
+                                }
+                            ]
+                        });
+                        });
+                    </script>   
+
+                    <script>
+                        $(window).on('load',function(){
+                            $('.slick-clined a').removeAttr('rel');
+                        });
+                    </script>
+    
+                    <div id="slick" class="osusume_box slider content">
+                        <!-- ひとつめのメニュー -->
+                        <div class="slider-1 slider-content">
+                            <h3 class>エチオピア<span class="pc"> </span><br class="br_sp">イルガチェフ ハルスケ</h3>
+                            <p>やさしさがあり、綺麗で繊細なコーヒー。<br>
+                                花のような華やかな風味、<br class="br_sp">ライムのような爽やかな風味と飲み口、<br>
+                                余韻には甘さも残り、キレがありながらもしっかりと余韻も楽しむことが出来ます。
+                            </p>           
+                            <a class="js-modal-open modal_btn" href="" data-target="modal01">もっと詳しく知る</a>                    
+                        </div>
+                        
+                        <!-- ふたつめのメニュー -->
+                        <div class="slider-2 slider-content">
+                            <h3>インドネシア<span class="pc"> </span><br class="br_sp">マンデリン リノ</h3>
+                            <p>独特なエキゾチックな香り、赤ワインのような<br class="br_sp">
+                                芳醇さと、長く続く余韻が特徴。<br>
+                                それでいて綺麗ですっきりとした飲み口が、</span><br class="br_sp">飲みやすく仕上げてくれます。<br>
+                                じっくりとコーヒーを楽しみたい方へ。
+                            </p>
+                            <a class="js-modal-open modal_btn" href="" data-target="modal02">もっと詳しく知る</a>                    
+                        </div>
+
+                        <!-- みっつめのメニュー -->
+                        <div  class="slider-3 slider-content">
+                            <h3 class>グァテマラ<span class="pc"> </span><br class="br_sp">フィンカ ロスマ</h3>
+                            <p>グァテマラらしいしっかりとした<br>
+                                飲み応えと、やわらかくトロンと滑らかな、<br class="br_sp">上質なチョコレートのような<br>
+                                舌触りと口溶けが心地よいコーヒー。
+                            </p>
+                            <a class="js-modal-open modal_btn" href="" data-target="modal03">もっと詳しく知る</a>                    
+                        </div>
+                    </div>
+                    <!-- slickのそと -->
+            
+                    <div id="modal01" class="modal_content modal js-modal">
+                        <div class="modal__bg js-modal-close"></div>
+                        <div class="modal__content">
+                            <a class="js-modal-close close_btn_x" href="">×</a>
+                            <span class="border_around"><h4>エチオピア イルガチェフ ハルスケ</h4> </span>
+                            <p>ライムのような爽やかさ。<br>花のような華やかな風味。</p>
+                            <div class="taste_box">
+                                <ul>
+                                    <li class="li_1">風味</li>
+                                    <li class="li_2">苦味</li>
+                                    <li class="li_3">ボディー</li>
+                                    <li class="li_4">酸味</li>
+                                    <li class="li_5">甘み</li>
+                                    <img src="images/taste_ethiopia.png" alt="エチオピアの味覚チャート">
+                                </ul>
+                            </div>
+                        
+                            <table>
+                                <tr>
+                                <th>生産者</th>
+                                <td>Haru Suke地域周辺在住小規模生産者</td>
+                                </tr>
+                                
+                                <tr>
+                                <th>エリア</th>
+                                <td>Haru Suke, Yingcheffe,Gediyo, Southern part of Etiopia</td>
+                                </tr>
+                                
+                                <tr>
+                                <th>プロ<br class="br_sp">セス</th>
+                                <td>Fully Washed</td>
+                                </tr>
+                                
+                                <tr>
+                                <th>品種</th>
+                                <td>Ethiopian Heirlooms</td>
+                                </tr>
+                                    
+                                <tr>
+                                <th>標高</th>
+                                <td>2,000m〜2,200m</td>
+                                </tr>
+                                    
+                                <tr>
+                                <th>tasting<br class="br_sp"><span class="pc"> </span>note</th>
+                                <td>floral,lime,orange,peach,bright,tea-like,sweet after taste,creamy</td> 
+                                </tr>
+                            </table>  
+                            <a class="js-modal-close close_btn" href="">閉じる</a>
+                        </div>
+                    </div>
+                    <!-- modal01 -->
+
+                    <div id="modal02" class="modal_content modal js-modal">
+                        <div class="modal__bg js-modal-close"></div>
+                        <div class="modal__content">
+                            <a class="js-modal-close close_btn_x" href="">×</a>
+                            <span class="border_around"><h4>インドネシア マンデリン リノ</h4></span>
+                                <p>赤ワインのような芳醇さと、<br>長く続く余韻。</p>
+                                <div class="taste_box">
+                                    <ul>
+                                        <li class="li_1">風味</li>
+                                        <li class="li_2">苦味</li>
+                                        <li class="li_3">ボディー</li>
+                                        <li class="li_4">酸味</li>
+                                        <li class="li_5">甘み</li>
+                                        <img src="images/taste_indonesia.png" alt="インドネシアの味覚チャート">
+                                    </ul>
+                                </div>
+                            <table>
+                                <tr>
+                                <th>生産者</th>
+                                <td>120の生産者</td>
+                                </tr>
+                                
+                                <tr>
+                                <th>エリア</th>
+                                <td>スマトラ島アチェ地区タケンゴン</td>
+                                </tr>
+                                
+                                <tr>
+                                <th>プロ<br class=""></span>セス</th>
+                                <td>スマトラ式</td>
+                                </tr>
+                                
+                                <tr>
+                                <th>品種</th>
+                                <td>Jember,Ateng,TIM-TIM</td>
+                                </tr>
+                                    
+                                <tr>
+                                <th>標高</th>
+                                <td>1,600m〜1,800m</td>
+                                </tr>
+                                
+                                <tr>
+                                <th>tasting<br class="br_sp"><span class="pc"> </span>note</th>
+                                <td>winey,eathy,red fruit note,long after taste,yuzu,clean acidy</td>    
+                                </tr>
+                            </table>
+                            <a class="js-modal-close close_btn" href="">閉じる</a>
+                        </div>
+                    </div>
+                    <!-- modal02 -->
+
+                    <div id="modal03" class="modal_content modal js-modal">
+                        <div class="modal__bg js-modal-close"></div>
+                        <div class="modal__content">
+                            <a class="js-modal-close close_btn_x" href="">×</a>
+                            <span class="border_around"><h4>グァテマラ フィンカ ロスマ</h4></span>
+                                <p>上質なチョコレートのような<br>舌触りと口溶けが心地よい。</p>
+                                <div class="taste_box">
+                                    <ul>
+                                        <li class="li_1">風味</li>
+                                        <li class="li_2">苦味</li>
+                                        <li class="li_3">ボディー</li>
+                                        <li class="li_4">酸味</li>
+                                        <li class="li_5">甘み</li>
+                                        <img src="images/taste_guatemala.png" alt="グァテマラの味覚チャート">
+                                    </ul>
+                                </div>
+                        
+                                <table>
+                                    <tr>
+                                    <th>生産者</th>
+                                    <td>Fredy Morales</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                    <th>エリア</th>
+                                    <td>San Pedro Necta, Huehuetenango</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                    <th>プロ<span class="sp"><br></span>セス</th>
+                                    <td>Yellow Honey</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                    <th>品種</th>
+                                    <td>Caturra, Bourbom</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                    <th>標高</th>
+                                    <td>1,500m〜1,900m</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                    <th>tasting note</th>
+                                    <td>dark chocolate,creamy,raspberry,mango,sweet</td>
+                                    </tr>
+                                </table>
+                            <a class="js-modal-close close_btn" href="">閉じる</a>
+                        </div>
+                    </div>
+                    <!-- modal03 -->
+                </div>
+            </section>
+
+            <section id="funniki">
+                <div class="container funniki_wrapper">
+                    <div><img class="funniki_1 anime" src="images/shop1.png" alt="コーヒーマシンの写真"></div>
+                    <figure><img class="funniki_foot1 anime" src="images/foot4.png" alt="飾り用あしあとのイラスト"></figure>
+                    <figure><img class="funniki_foot2 anime" src="images/foot4.png" alt="飾り用あしあとのイラスト"></figure>
+                    
+                    <div><img class="funniki_2 anime" src="images/shop2.png" alt="店先でサーブされたコーヒー"></div>
+                    <div><img class="funniki_3 anime" src="images/shop3.png" alt="店の壁に印字された店名と飾り"></div>
+                    
+                    <div class="funniki_p  anime">
+                        <p>そっと応援したくて始めたけれど<br>自分も応援されているコトに<br>気づきました。</p>
+                        <figure><img class="funniki_leaf" src="images/leaf.png" alt="飾り用葉っぱのイラスト"></figure>
+                    </div>
+
+                    <div><img class="funniki_5 anime" src="images/shop5.png" alt="店のウィンドウに印字された店名"></div>
+                </div>
+            </section>
+
+            <section id="info" class="anime">
+                <h2><img src="images/info.png" alt="INFO"><br class="sp">店舗情報</h2>
+                <p class="lh">COFFEE STAND pole pole<br><span class="small">（コーヒースタンドポレポレ）</span></p>
+                <div class="container info_wrapper">  
+                    <address class="footer_address">
+                        <p>名古屋市天白区原1丁目502<br> ライオンズマンション原駅1F<br>地下鉄鶴舞線原駅１番出口裏<br class="br_sp">駐輪場からすぐ</p><br>
+                        <p><span class="em">営業時間</span>　<span class="under">火-金 <time>8:30〜19:00</time></span><br>　　　　　<span class="under">土 <time>8:30〜17:00</time></span><br><span class="em">定休日</span> 日.月.祝日</p>
+                    </address>
+
+                    <div class="info_item">
+                        <div class="googlemap">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2447.120002490443!2d136.99566273221808!3d35.12615418363763!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xd21d9cf41a78b8b7!2zQ09GRkVFIFNUQU5EIHBvbGUgcG9sZe-8iOOCs-ODvOODkuODvOOCueOCv-ODs-ODiSDjg53jg6zjg53jg6zvvIk!5e0!3m2!1sja!2sjp!4v1603206351074!5m2!1sja!2sjp" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                        </div>
+                    </div>  
+                </div>                   
+            </section>
+        </main>
+
+        <footer class="l-footer anime">
+            <div class="container">
+                <div class="footer_wrapper">
+                    <p class="sp footer_message anime footter_sp"><img src="images/footer_p.png" alt="日常に穏やかなひとときを。"></p>
+                    <p class="footer_pc_message">日常に穏やかなひとときを。</p>
+                    <small><a href="#top">pole pole since 2018</a></small>
+                </div>
+            </div> 
+        </footer>
+
+        <script>
+            ScrollReveal().reveal('.anime', {
+                reset: false,
+                mobile: true,
+                origin: 'top',
+                duration: 1000,
+                delay: 800,
+                opacity: 0
+            });
+        </script>
+        <!-- scrollreveal -->
+
+
+        <script>
+            ScrollReveal().reveal('.anime_fukidashi', {
+                reset: false,
+                mobile: true,
+                origin: 'bottom',
+                duration: 1200,
+                delay: 3000,
+                distance: '80px',
+                opacity: 0
+            });
+        </script>
+    </body>
+</html>
