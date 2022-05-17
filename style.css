@@ -1,0 +1,726 @@
+@charset "UTF-8";
+
+/* ===============================================
+Base
+=============================================== */
+
+/*
+  Reset
+----------------------------------------------- */
+html {
+      box-sizing: border-box;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+main, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+
+}
+article, aside, details, figcaption, figure,
+footer, header, hgroup, main, menu, nav, section {
+  display: block;
+}
+
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+cursor: pointer;
+}
+
+/*
+  Default Style
+----------------------------------------------- */
+
+body {
+  font-family:  'Times New Roman', Times, serif,'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro','Meiryo UI', 'メイリオ', Meiryo, sans-serif;
+  color: #212121;
+}
+
+
+img {
+  vertical-align: bottom;
+  max-width: 100%;
+}
+
+.img_title {
+  width: 50%;
+}
+
+a {
+  text-decoration: none;
+  color: #212121;
+}
+
+
+section:not(:first-child){ 
+  padding: 80px 0;
+}
+
+
+section {
+  width: 100%;
+}
+
+.section-wrapper-grid {
+  background-color: #EFE1E1;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  /*grid-template-columns: repeat(auto-fill, minmax(200px 1fr));*/
+   width: auto;
+   height: auto;
+      overflow: hidden;
+}
+
+.grid-child {
+  transition: all 0.5s ease-out;
+}
+
+.grid-child a{
+  display: block;
+  padding: 80px 0;
+}
+
+
+.grid-child-content{
+display: block;
+overflow: hidden;
+}
+
+.grid-child:hover {
+overflow: hidden;
+background:#D3BABA;
+    transform: scale(1.05);
+}
+
+.grid-child a:hover{
+color:#fff;
+}
+
+h1, h2, h3, h4, p,ul {
+  text-align: center;
+  display:block;
+  line-height: 2.5;
+}
+
+p {
+line-height:1.5;
+}
+
+h1 {
+  line-height: 1.8;
+  font-size: .8rem;
+  letter-spacing: 1.5px;
+}
+
+
+.small {
+  font-size: .5rem;
+}
+
+
+
+
+/* ===============================================
+Layout
+=============================================== */
+
+/*
+  Centering
+----------------------------------------------- */
+
+.inner {
+  margin:0 auto;
+  text-align: center;
+
+}
+
+@media screen and (min-width:961px){
+  .inner {
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center; 
+  }
+}
+
+/*
+  Opening Animation
+----------------------------------------------- */
+
+/* .start {
+	background: #FFF;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 9000;
+}
+.start p,.start figure {
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	display: none;
+	z-index: 9999;
+	width: 800px;
+	font-size: 1rem;
+	font-weight: bold;
+	line-height: 5rem;
+	letter-spacing: 2px;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+}
+
+
+@media screen and (max-width:960px){
+  .start p {
+  font-size: .8rem;
+  }
+} */
+
+/*
+  Header
+----------------------------------------------- */
+
+
+header {
+  padding-top: 13px;
+  background-color: #EFE1E1;
+  letter-spacing: .1rem;
+  margin: 0 auto;
+}
+
+@media screen and (min-width:761px){
+  header {
+    padding-top: 18px;
+  }
+}
+
+header h1 {
+  display: block;
+  text-align: center;
+  font-size: .75rem;
+}
+
+nav { 
+   display: inline-block; 
+}
+
+
+
+
+.navlink-content{
+display: inline-block;
+transition: all 0.2s ease-out;
+padding:0 15px 0 25px;
+}
+
+.navtext-jp {
+font-size:5px;
+color:#444;
+opacity:0%;
+}
+
+
+
+.navtext-en:hover{
+opacity: 50%;
+}
+
+.navtext-en:hover + .navtext-jp  {
+opacity:100%;
+transition: all 0.5s ease-out;
+
+}
+
+
+
+
+/*
+  Header Decoration
+----------------------------------------------- */
+
+.h1-name {
+font-size: 1.3rem;
+}
+
+.font_copperplate {
+    font-family: 'Copperplate';
+}
+
+.wrapper_nav {
+    background: #fff;
+    margin-top: 1rem;
+
+}
+
+.nav_pc {
+    color:#212121;
+    margin-top: 20px;
+    position:relative;
+}
+
+.nav_pc li:not(:last-child)::after {content:"/";
+position:absolute;
+top:-40%;
+font-size:25px;
+opacity:40%;
+}
+
+
+/*
+  Header SP
+----------------------------------------------- */
+
+@media screen and (min-width:961px){
+  header h1 {
+    font-size: 1rem;
+  }
+  
+  h1{
+    display:inline-block;
+  }
+}
+@media screen and (min-width: 961px){
+nav li {
+    float: left;
+}
+}
+
+@media screen and (max-width: 960px){
+    .nav_pc, .pc_only  {
+        display: none;
+    }
+
+
+    }
+
+/*
+  Drawer
+----------------------------------------------- */
+@media screen and (min-width: 961px){
+.drawer {
+display: none;
+}
+}
+
+.drawer_menu {
+  background-image: url("img/hero_pc_shadow.png");
+  background-size:contain;
+  width: 100%;
+}
+
+#globalMenuSp.active {
+  transform: translateY(0%);
+  -webkit-transform: translateY(0%);
+  -moz-transform: translateY(0%);
+  -ms-transform: translateY(0%);
+  -o-transform: translateY(0%);
+}
+
+.drawer_checkbox {
+  display: none;
+}
+
+.drawer_icon {
+  display: block;
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  position: fixed;
+  top: 10px;
+  right: 2%;
+  cursor: pointer;
+  z-index: 20;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.drawer_icon_item, .drawer_icon_item::before, .drawer_icon_item::after {
+  background-color: gray;
+  display: block;
+  width: 26px;
+  height: 2px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.drawer_icon_item::before {
+  content: '';
+  top: 16px;       
+}
+
+.drawer_icon_item::after {
+  content: '';
+  top: -16px;       
+}
+
+/* 暗い背景 */
+.drawer_overlay {
+  background: #333;
+  opacity: 0;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.drawer_checkbox:checked ~ .drawer_overlay {
+  opacity: 0.3;
+  pointer-events: auto;
+}
+
+.drawer_checkbox:checked ~ .drawer_menu {
+  right: 0;
+}
+
+
+/* ハンバーガーが×に変わる */
+.drawer_checkbox:checked ~ .drawer_icon .drawer_icon_item {
+  background: transparent;
+}
+
+.drawer_checkbox:checked ~ .drawer_icon .drawer_icon_item::before {
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  top: 0;
+}
+
+.drawer_checkbox:checked ~ .drawer_icon .drawer_icon_item::after {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  transform: rotate(45deg);
+  top: 0;
+}
+
+/* 全体の動く速度 */
+.drawer_icon_item,
+.drawer_icon_item:after,
+.drawer_icon_item:before,
+.drawer_overlay,
+.drawer_menu {
+  -webkit-transition: all 0.7s;
+  -moz-transition: all 0.7s;
+  transition: all 0.7s;
+}
+
+/* ドロワー中身の見た目 */
+.drawer_menu {
+  text-align: center;
+  background-color: #fff;
+  max-width: 100%;
+  width: 320px;
+  height: 100vh;
+  position: fixed;
+  top:0;
+  right: -320px;
+  z-index: 15;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+
+.drawer_menu ul {
+  margin-top: 25%;
+}
+
+.drawer_menu ul li {
+  font-size: 18px;
+  padding-bottom: 36px;
+}
+
+.drawer_menu ul li a {
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.drawer_menu img {
+  margin-top: 40px;
+  width: 50px;
+}
+
+.drawer_menu span {
+  display: block;
+  font-size: 16px;
+}
+
+
+/*
+  Main
+----------------------------------------------- */
+main {
+  clear: both;
+  text-align: center;
+}
+
+/* Hero */
+
+@media screen and (max-width: 520px){
+.pc_ipad{
+display:none;
+}
+}
+
+.hero_pc {
+  width: 960px;
+  margin: 0 auto;
+  background-image: url("img/hero_pc_shadow.png");
+  background-repeat:no-repeat;
+  background-size:contain;
+  }
+
+.hero_pc_center {
+    width: 70%;
+    justify-content: space-around;
+    overflow:hidden;
+    margin: 0 auto;
+    margin-top: 40px;
+    display:flex;
+    align-items:center;
+}
+
+
+.hero_pc_img {
+    max-width: 500px;
+}
+
+.hero_img_shadow {
+    width: 300px;
+    position: absolute;
+    right: 0;
+    z-index: 999;
+}
+
+/* SP*/
+
+
+/*
+  Main
+----------------------------------------------- */
+
+.inner-960 {
+    max-width: 960px;
+}
+
+.inner_prof {
+    display: flex;
+}
+
+
+@media screen and (max-width: 960px){
+    .inner_prof  {
+        display: inline;
+    }
+}
+
+
+.profile_left {
+    width: 40%;
+}
+
+@media screen and (max-width: 960px){
+  .profile_left {
+    width: 70%;
+    margin: 0 auto;
+}
+}
+
+.content_profile_p_wrapper {
+  margin: 60px;
+    width: 60%;
+}
+
+@media screen and (max-width: 960px){
+  .content_profile_p_wrapper  {
+    margin: 0 auto;
+    width: 90%;
+    }
+}
+
+.content_profile_p_wrapper p {
+    font-size: .8rem;
+    text-align: left;
+}
+
+.button {
+margin-top: 40px;
+transition: all 0.5s ease-out;
+}
+
+.button:hover {
+opacity: 50%;
+}
+
+.button a {
+padding:10px 30px;
+border-radius: 3px;
+background: #8497A5;
+color: #fff;
+}
+
+
+.h2-name {
+font-size:1.5rem;
+}
+
+
+
+/*
+  News
+----------------------------------------------- */
+#news {
+    background-image: url(img/organ.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 5rem;
+    height: 20rem;
+    color: white;
+}
+
+.inner_top_h2{
+    overflow: hidden;
+    width: 200px;
+
+}
+
+
+
+
+
+.img_top_rose {
+    max-width: 120px;
+    max-height:140px;
+}
+
+/*
+  Schedule
+----------------------------------------------- */
+
+/*
+  Media
+----------------------------------------------- */
+
+/*
+  Contact
+----------------------------------------------- */
+
+#contact {
+  background-color: #8497A5;
+  color:#fff;
+}
+
+/*
+  Footer
+----------------------------------------------- */
+footer {
+  position:relative;
+  background: #8497A5;
+  color: #fff;
+}
+
+.footer-sns-wrapper{
+width: 200px;
+margin: 0 auto;
+}
+
+.footer-sns-wrapper ul{
+display: flex;
+}
+
+
+.footer-sns-wrapper li{
+border-radius:50%;
+line-height: 1em;
+border-style:solid;
+border-width:1px;
+border-color: #fff;
+width: 1em;
+height: 1em;
+padding: 20px;
+margin: 10px;
+transition: all 0.5s ease-out;
+}
+
+.footer-sns-wrapper li:hover{
+background: #fff;;
+color: #8497A5;
+
+}
+
+.footer-icon {
+width: 20px;
+  transition: all 0.5s ease-out;
+
+}
+
+.footer-a {
+color: #fff;
+}
+
+.footer-icon:hover .footer-a {
+color: #8497A5;
+}
+
+
+
+/* 960px以下に適用されるCSS */
+
+
+/* 961px以上に適用されるCSS */
+
+
+
+/*
+  モーダル修正
+----------------------------------------------- */
+
+  Accessibility
+----------------------------------------------- */
+.screen_reader_text {
+  position: absolute;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  clip: rect(1px, 1px, 1px, 1px);
+}
