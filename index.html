@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ERIKO YAMAJI</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://use.typekit.net/adm0zpp.css">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="slick/slick.css" media="all">
+        <link rel="stylesheet" href="slick/slick-theme.css" />
+
+        
+        
+        <!-- favicon -->
+        <link rel="shortcut icon" type="image/png" href="images/coffee.png"/>
+
+        <!-- jQueryを読み込む  -->
+        <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="test_js.js"></script>
+        
+        <!-- スライダーのプラグイン -->
+        <script src="slick/slick.min.js"></script>
+
+        <!-- scrollreveal -->
+        <!-- <script src="https://unpkg.com/scrollreveal"></script> -->
+
+        <!-- スムーススクロールのプラグイン -->
+        <script src="smooth-scroll.min.js"></script>
+
+        <script>
+            $(function() {
+            $('.drawer_menu li a').on('click', function(event) {
+                $('.drawer_checkbox').prop('checked', false);
+            });
+            });
+        </script>
+
+        <script type="text/javascript">
+            var scroll = new SmoothScroll('a[href*="#"]', {
+                header: '#header-nav',
+                speed: 900
+            });
+
+            $(function() {
+                var topBtn = $('.to_top');
+                topBtn.hide();
+                $(window).scroll(function () {
+                        if ($(this).scrollTop() > 800) {
+                            topBtn.fadeIn();
+                        } else {
+                            topBtn.fadeOut();
+                        }
+                });
+            });	
+        </script>
+
+
+        <!-- バーガーメニューリンク内ページリンク閉じる -->
+        <script type="text/javascript">
+            $(function(){
+                $('#menu a[href]').on('click', function(event) {
+                    $('.drawer_checkbox').prop('checked', false);
+                });
+            });
+        </script>
+
+        </script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    </head>
+    <body>
+        <section>
+            <div class="wrapper">
+                <header id="header">
+                    <!-- ドロワーメニュー -->
+                    <div class="drawer">
+                        <input class="drawer_checkbox" id="drawerCheckbox" type="checkbox">
+                        
+                        <!-- ドロワーアイコン部分 -->
+                        <label class="drawer_icon" for="drawerCheckbox">
+                            <span class="drawer_icon_item navToggle"></span>
+                        </label>
+                        
+                        <!-- 背景を暗く -->
+                        <label class="drawer_overlay" for="drawerCheckbox"></label>
+
+                        <nav class="drawer_menu" id="nav-input" role="navigation">
+                            <!-- <p class="screen_reader_text">MENU</p> -->
+                            <ul id="menu">
+                                <li><a href="#top" id="drawer_message">TOP</a></li>
+                                <li><a href="#profile" id="drawer_message">Profile</a></li>
+                                <li><a href="#schedule" id="drawer_message">Schedule</a></li>
+                                <li><a href="#media" id="drawer_message">Media</a></li>
+                                <li><a href="#blog" id="drawer_message">Blog</a></li>
+                                <li><a href="#contact" id="drawer_message">Contact</a></li>
+                            </ul>
+                        </nav>
+                    </div>   
+
+                    <div class="inner">
+                        <h1 class="h1-name">ERIKO YAMAJI</h1>
+                        <p>Official Website</p>
+                        <div class="wrapper_nav">
+                            <nav class="nav_pc" id="headernav">
+                                <ul>
+                                    <li>
+                                        <div class="navlink-content">
+                                            <a href="#profile" id="drawer_message" class="navlink-a">
+                                                <p class="navtext-en">Profile</p>
+                                                <p class="navtext-jp">プロフィール</p>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="navlink-content">
+                                            <a href="#schedule" id="drawer_message">
+                                                <p class="navtext-en">Schedule</p>
+                                                <p class="navtext-jp">スケジュール</p>
+                                            </a>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <div class="navlink-content">
+                                            <a href="#media" id="drawer_message">
+                                                <p class="navtext-en">Media</p>
+                                                <p class="navtext-jp">メディア</p>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="navlink-content">
+                                            <a href="#blog" id="drawer_message">
+                                                <p class="navtext-en">Blog</p>
+                                                <p class="navtext-jp">ブログ</p>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="navlink-content">
+                                        <a href="#contact" id="drawer_message">
+                                            <p class="navtext-en">Contact</p>
+                                            <p class="navtext-jp">コンタクト</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+            </header>
+        </section>
+
+        <main>
+            <div id="top">
+                <div class="wrapper">
+                    <div class="hero_pc pc_ipad">
+                        <div class="hero_pc_center">
+                            <figure><img class="hero_pc_img" src="img/hero_pc.png" alt=""></figure>
+                            <div class="hero_pc_title">
+                                <h2>Organist</h2>
+                                <h1 class="">Eriko Yamaji</h1>
+                                <p>山司恵莉子</p>
+                            </div>
+                        </div>    
+                    </div>
+                </div>
+            </div>
+
+            <section id="news" class="anime">
+                <div class="wrapper">
+                    <div class="inner">
+                        <h2>NEWS</h2>
+                    </div>
+                </div>
+            </section>
+            
+
+            <section id="profile" class="anime">
+                <div class="wrapper">
+                    <div class="inner inner-960 inner_prof">
+                        <div class="profile_left">
+                            <figure><img src="img/profile.png" alt=""></figure>
+                        </div>
+                        <div class="profile_right content_profile_p_wrapper">
+                        <h2 class="h2-name">山司恵莉子</h2>
+                        <p>Eriko Yamaji</p>
+                        <p>宮城県出身。
+                            東北学院大学在学中にオルガンに出逢う。<br>
+                            東京藝術大学音楽学部器楽科オルガン専攻卒業、同大学院音楽研究科修士課程在籍。<br>
+                            平成29年度公益財団法人青山音楽財団奨学生。<br>
+                            横浜みなとみらいホール ホールオルガニスト・インターンシッププログラム平成30年度第17期生。<br>
+                            トビタテ ！留学JAPAN日本代表プログラム第10期派遣留学生。<br>
+                            日本オルガニスト協会会員。<br>
+                            現在、フランスのトゥールーズ地方音楽院にてオルガンとチェンバロを学んでおり、同音楽院の古楽科にも在籍中。<br>
+                            古楽から現代音楽まで、ソロ、アンサンブル問わず幅広く活動している。<br>
+                            </p>
+                            <p>平成29年度公益財団法人青山音楽財団奨学生。
+                                横浜みなとみらいホール ホールオルガニスト・インターンシッププログラム平成30年度第17期生。
+                                トビタテ ！留学JAPAN日本代表プログラム第10期派遣留学生。
+                                日本オルガニスト協会会員。</p>
+                            <div class="button">
+                              <a href="">プロフィール詳細はこちら</a>
+                         </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="section-wrapper-grid">
+                <div id="schedule" class="anime grid-child">
+                    <div class= "grid-child-content">
+                        <a href="">
+                            <div class="inner inner_top_h2">
+                                <div class="float_left">
+                                    <h2 class="h2_top">Schedule</h2>
+                                    <p>スケジュール</p>
+                                    <figure class="img_top_h2"><img class="img_top_rose" src="img/rose1.png" alt=""></figure>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="media" class="anime grid-child">
+                    <div class="grid-child-content">
+                        <a href="">
+                            <div class="inner inner_top_h2">
+                                <div class="float_left">
+                                    <h2 class="h2_top">Media</h2>
+                                    <p>演奏動画等</p>
+                                    <figure class="img_top_h2"><img class="img_top_rose" src="img/rose2.png" alt=""></figure>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="blog" class="anime grid-child">
+                    <div class="grid-child-content">
+                        <a href="">
+                            <div class="inner inner_top_h2">
+                                
+                                    <h2 class="h2_top">Blog</h2>
+                                    <p>ブログ</p>
+                                
+                                <figure class="img_top_h2"><img class="img_top_rose" src="img/rose3.png" alt=""></figure>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <section id="contact" class="anime">
+                <div class="wrapper">
+                    <div class="inner inner-960 ">
+                        <h2>Contact</h2>
+                        <script></script>
+                    </div>
+                </div>                   
+            </section>
+        </main>
+
+        <footer class="l-footer anime">
+            <div class="wrapper">
+                <div class="inner inner-960">
+                    <div class="footer-contents">
+                        <div class="footer-sns-wrapper">
+                            <ul>
+                                <li class="footer-icon"><a href="" class="footer-a"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                <li class="footer-icon"><a href="" class="footer-a"><i class="fa-brands fa-twitter"></i></a></li>
+                                <li class="footer-icon"><a href="" class="footer-a"><i class="fa-solid fa-heart"></i></a></li>
+                            </ul>
+                        </div>
+                        <p><small>Eriko Yamaji 2022</small></p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            ScrollReveal().reveal('.anime', {
+                reset: false,
+                mobile: true,
+                origin: 'top',
+                duration: 1000,
+                delay: 800,
+                opacity: 0
+            });
+        </script>
+        <!-- scrollreveal -->
+
+
+        <script>
+            ScrollReveal().reveal('.anime_fukidashi', {
+                reset: false,
+                mobile: true,
+                origin: 'bottom',
+                duration: 1200,
+                delay: 3000,
+                distance: '80px',
+                opacity: 0
+            });
+        </script>
+    </body>
+</html>
